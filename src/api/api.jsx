@@ -16,8 +16,8 @@ export const fetchDetails = async (id) => {
   return await axios.get(`movie/${id}?api_key=${KEY}&language=${language}`) 
 }
 
-export const fetchCredits = async() => {
-  return await axios.get(`movie/movie_id/credits?api_key=${KEY}&language=${language}`) 
+export const fetchCredits = async(id) => {
+  return await axios.get(`/movie/${id}/credits?api_key=${KEY}&language=${language}`) 
 }
 
 export const fetchReviews = async() => {

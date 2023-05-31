@@ -1,6 +1,6 @@
 import { fetchDetails } from "api/api";
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, Outlet} from "react-router-dom";
 import { useState,  useEffect} from "react";
 import css from './MovieCard.module.css'
 
@@ -26,10 +26,10 @@ const MovieDetails = () => {
     const {poster_path, title, popularity, overview, genres} = movieDetails
 return(
 
-<container className={css.container}>
+<div className={css.container}>
 <button type='button' className={css.button}>Go back</button>
     <section className={css.section__poster}>
-<img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title} width={250}/>
+<img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title} width={280}/>
 <div className={css.description}>
 <h1>{title}</h1>
 <p>User Srtore: {
@@ -49,11 +49,14 @@ popularity
 <section className={css.section__link}>
 <p>Additoonal information</p>
 <ul>
-    <li className={css.link}><Link>Cast</Link></li>
+    <li className={css.link}>
+        <Link to={`cast`}>Cast</Link>
+        </li>
     <li className={css.link}><Link>Reviews</Link></li>
 </ul>
+<Outlet/>
 </section>
-</container>
+</div>
 
 )
 
