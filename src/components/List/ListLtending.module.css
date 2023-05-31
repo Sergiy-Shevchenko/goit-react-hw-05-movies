@@ -4,10 +4,10 @@
 
 .item {
     font-size: 16px;
-    color: black;
+    color: rgb(37, 7, 234);
     margin-bottom: 5px;
 }
 
 .item :hover {
-    color: rgb(67, 144, 231);
+    color: rgb(1, 25, 53);
 }

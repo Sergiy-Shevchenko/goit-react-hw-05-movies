@@ -12,8 +12,8 @@ export const fetchSearch = async(query) => {
   return await axios.get(`search/movie?api_key=${KEY}&page=1&query=${query}&?&language=${language}&include_adult=false`) 
 }
 
-export const fetchDetails = async() => {
-  return await axios.get(`movie/movie_id?api_key=${KEY}&language=${language}`) 
+export const fetchDetails = async (id) => {
+  return await axios.get(`movie/${id}?api_key=${KEY}&language=${language}`) 
 }
 
 export const fetchCredits = async() => {

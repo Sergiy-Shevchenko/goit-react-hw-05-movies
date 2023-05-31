@@ -2,3 +2,13 @@
   margin-top: 15px;
   margin-left: 24px;
 }
+
+.item {
+  font-size: 16px;
+  color: rgb(37, 7, 234);
+  margin-bottom: 5px;
+}
+
+.item :hover {
+  color: rgb(1, 25, 53);
+}

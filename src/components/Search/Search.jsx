@@ -15,7 +15,7 @@ const Search = () => {
       try {
         const search = await fetchSearch(query);
         setMoviesSearch(search.data.results);
-        console.log(search.data.results);
+        // console.log(search.data.results);
       } catch (error) {
         console.log('Error');
       }
@@ -63,7 +63,7 @@ const Search = () => {
         {moviesSearch.map(({ id, title }) => {
           return (
             <li key={id} className={css.item}>
-              <Link>{title}</Link>
+              <Link className={css.item} to={`/movies/${id}`}>{title}</Link>
             </li>
           );
         })}

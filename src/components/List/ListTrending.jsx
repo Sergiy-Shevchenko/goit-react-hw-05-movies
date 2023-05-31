@@ -12,7 +12,7 @@ const ListTrending = () => {
       try {
         const trending = await fetchMovies();
         setMovieTrendList(trending.data.results);
-        console.log(trending.data.results);
+        // console.log(trending.data.results);
       } catch (error) {
         console.log('Error');
       }
@@ -24,7 +24,7 @@ const ListTrending = () => {
     <ul className={css.list}>
       {movieTrendList.map(({ id, title, name }) => (
         <li key={id} className={css.item}>
-          <Link>{title}{name}</Link>
+          <Link className={css.item} to={`/movies/${id}`}>{title}{name}</Link>
         </li>
       ))}
     </ul>
