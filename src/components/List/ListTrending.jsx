@@ -1,29 +1,34 @@
-import React from "react";
-import { useState, useEffect } from "react"; 
-
+import React from 'react';
+import { useState, useEffect } from 'react';
+import {fetchMovies} from 'api/api';
+import { Link } from 'react-router-dom';
+import css from './ListLtending.module.css'
 
 const ListTrending = () => {
-    
+  const [movieTrendList, setMovieTrendList] = useState([]);
 
-useEffect(()=>{
-fetch(`"https://api.themoviedb.org/3/trending/movie/day?api_key=4b93e172d3270cc5f7c85789f0b471e0"`)
-.then(res=> {
-    if(res.ok) {
-        return res.json()
-    }
-  return Promise.reject(new Error('Error'));
-})
-// console.log(fetch)
+  useEffect(() => {
+    const fetchTrendMovies = async () => {
+      try {
+        const trending = await fetchMovies();
+        setMovieTrendList(trending.data.results);
+        console.log(trending.data.results);
+      } catch (error) {
+        console.log('Error');
+      }
+    };
+    fetchTrendMovies();
+  }, []);
 
-})
-
-// 'https://api.themoviedb.org/3/movie/11?api_key=4b93e172d3270cc5f7c85789f0b471e0/'
-
-    return <ul>
-        <li></li>
+  return (
+    <ul className={css.list}>
+      {movieTrendList.map(({ id, title, name }) => (
+        <li key={id} className={css.item}>
+          <Link>{title}{name}</Link>
+        </li>
+      ))}
     </ul>
-}
+  );
+};
 
-export default ListTrending
-
-
+export default ListTrending;

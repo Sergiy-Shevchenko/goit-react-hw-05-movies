@@ -1,0 +1,13 @@
+.list {
+    margin: 0;
+}
+
+.item {
+    font-size: 16px;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.item :hover {
+    color: rgb(67, 144, 231);
+}
