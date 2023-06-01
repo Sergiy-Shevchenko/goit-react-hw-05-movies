@@ -29,12 +29,17 @@ ul.list li {
    
 }
 
-.list {
+.list__list {
     padding-inline-start: 0;
+    text-decoration: none
 }
 
 .section__link {
 /* border:solid 1px; */
 
 
+}
+
+.link {
+    text-decoration: none
 }

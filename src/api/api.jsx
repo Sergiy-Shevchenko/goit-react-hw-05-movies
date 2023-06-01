@@ -20,6 +20,6 @@ export const fetchCredits = async(id) => {
   return await axios.get(`/movie/${id}/credits?api_key=${KEY}&language=${language}`) 
 }
 
-export const fetchReviews = async() => {
-  return await axios.get(`movie/movie_id/reviews?api_key=${KEY}&language=${language}`) 
+export const fetchReviews = async(id) => {
+  return await axios.get(`movie/${id}/reviews?api_key=${KEY}&page=1&language=${language}`) 
 }

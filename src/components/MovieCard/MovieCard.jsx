@@ -49,10 +49,12 @@ popularity
 <section className={css.section__link}>
 <p>Additoonal information</p>
 <ul>
-    <li className={css.link}>
-        <Link to={`cast`}>Cast</Link>
+    <li className={css.list__link}>
+        <Link to={`cast`} className={css.link}>Cast</Link>
         </li>
-    <li className={css.link}><Link>Reviews</Link></li>
+    <li className={css.list__link}>
+      <Link to={'reviews'} className={css.link}>Reviews</Link>
+      </li>
 </ul>
 <Outlet/>
 </section>
