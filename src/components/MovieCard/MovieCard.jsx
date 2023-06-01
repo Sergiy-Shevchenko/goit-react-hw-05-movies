@@ -5,7 +5,7 @@ import { useState,  useEffect} from "react";
 import css from './MovieCard.module.css'
 
 
-const MovieDetails = () => {
+const MovieDetailsCard = () => {
     const {movieId} = useParams()
     const [movieDetails, setMovieDetails] = useState({});
   
@@ -67,4 +67,4 @@ popularity
 
 }
 
-export default MovieDetails;
+export default MovieDetailsCard;

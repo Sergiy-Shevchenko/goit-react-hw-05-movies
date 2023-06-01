@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
-import {MovieDetails} from "components/MovieCard/MovieCard";
+import MovieDetailsCard from "components/MovieCard/MovieCard";
 
 const MovieDetails = () => {
     return (
       
-        <MovieDetails>
+        <MovieDetailsCard>
             <Outlet/>
-        </MovieDetails>
+        </MovieDetailsCard>
       
     );
   };
