@@ -34,15 +34,15 @@ return(
 <h1>{title}</h1>
 <p>User Srtore: {
 popularity
-// .toFixed()
+.toFixed()
 }</p>
 <h3>Overview</h3>
 <p>{overview}</p>
 <h3>Genres</h3>
 <ul className={css.list}>
-{/* {genres.map(({id, name}) => (
+{genres.map(({id, name}) => (
     <li key={id} className={css.item}>{name}</li>
-))} */}
+))}
 </ul>
 </div>
 </section>
