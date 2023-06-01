@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import MovieDetails from "components/MovieCard/MovieCard";
+import {MovieDetails} from "components/MovieCard/MovieCard";
 
 const MovieDetails = () => {
     return (
