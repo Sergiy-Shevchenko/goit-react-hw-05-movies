@@ -11,5 +11,5 @@ const MovieDetails = () => {
     );
   };
   
-  export default Movies;
+  export default MovieDetails;
   
