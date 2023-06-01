@@ -1,10 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import {fetchMovies} from 'api/api';
-import { Link } from 'react-router-dom';
-import css from './ListLtending.module.css'
+import { fetchMovies } from 'api/api';
+import { Link, useLocation } from 'react-router-dom';
+import css from './ListLtending.module.css';
 
 const ListTrending = () => {
+  const locacation = useLocation();
   const [movieTrendList, setMovieTrendList] = useState([]);
 
   useEffect(() => {
@@ -12,7 +13,6 @@ const ListTrending = () => {
       try {
         const trending = await fetchMovies();
         setMovieTrendList(trending.data.results);
-        // console.log(trending.data.results);
       } catch (error) {
         console.log('Error');
       }
@@ -24,7 +24,14 @@ const ListTrending = () => {
     <ul className={css.list}>
       {movieTrendList.map(({ id, title, name }) => (
         <li key={id} className={css.item}>
-          <Link className={css.item} to={`/movies/${id}`}>{title}{name}</Link>
+          <Link
+            className={css.item}
+            to={`/movies/${id}`}
+            state={{ from: locacation }}
+          >
+            {title}
+            {name}
+          </Link>
         </li>
       ))}
     </ul>

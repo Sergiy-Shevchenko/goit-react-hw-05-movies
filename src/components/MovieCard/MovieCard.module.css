@@ -1,45 +1,53 @@
-.container,
-.section__poster,
-.section__link
- {
-    padding-left: 24px;
+.container {
+  padding-left: 24px;
+  padding-top: 10px;
 }
 .button {
-    margin-top: 10px;
-    margin-bottom: 10px;
- 
+  font-size: 16px;
+  color: #090909;
+  background-color: #dcdfef;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.button :hover {
+  background-color: rgb(37, 7, 234);
+  color: #f3eded;
 }
 
 .section__poster {
-    display: flex;
+  display: flex;
+  margin-top: 10px;
 }
 
 .description {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 .link {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 ul.list li {
-    float: left;
-    list-style: none;
-    margin-right: 10px;
-   
+  float: left;
+  list-style: none;
+  margin-right: 10px;
 }
 
 .list__list {
-    padding-inline-start: 0;
-    text-decoration: none
+  padding-inline-start: 0;
+  text-decoration: none;
 }
 
 .section__link {
-/* border:solid 1px; */
-
-
+  /* border:solid 1px; */
 }
 
 .link {
-    text-decoration: none
+  text-decoration: none;
 }

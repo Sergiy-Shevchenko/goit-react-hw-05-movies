@@ -1,14 +1,14 @@
 .list {
-    margin: 0;
+  margin: 0;
 }
 
 .item {
-    font-size: 16px;
-    color: rgb(37, 7, 234);
-    margin-bottom: 5px;
-    text-decoration: none
+  font-size: 16px;
+  color: rgb(37, 7, 234);
+  margin-bottom: 5px;
+  text-decoration: none;
 }
 
 .item :hover {
-    color: rgb(1, 25, 53);
+  color: rgb(1, 25, 53);
 }
