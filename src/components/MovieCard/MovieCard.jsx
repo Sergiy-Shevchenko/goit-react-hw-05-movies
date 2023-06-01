@@ -7,7 +7,7 @@ import css from './MovieCard.module.css';
 const MovieDetailsCard = () => {
   const locacation = useLocation();
   const backLink = useRef(locacation.state?.from ?? '/');
-  console.log(locacation);
+  // console.log(locacation);
 
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState({});
@@ -39,7 +39,9 @@ const MovieDetailsCard = () => {
         />
         <div className={css.description}>
           <h1>{title}</h1>
-          <p>User Srtore: {popularity.toFixed()}</p>
+          <p>User Srtore: {popularity
+          // .toFixed(1)
+          }</p>
           <h3>Overview</h3>
           <p>{overview}</p>
           <h3>Genres</h3>
