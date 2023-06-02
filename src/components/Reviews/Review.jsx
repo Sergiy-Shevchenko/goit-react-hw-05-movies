@@ -5,20 +5,24 @@ import { useParams } from 'react-router-dom';
 const Reviews = () => {
   const { movieId } = useParams();
   const [rev, setRev] = useState([]);
+  
 
   useEffect(() => {
     const fetchReview = async id => {
       try {
         const rev = await fetchReviews(id);
         setRev(rev.data.results);
-        console.log(rev.results);
+        console.log(rev.data.results);
       } catch (error) {
         console.log('Error Reviews');
       }
     };
     fetchReview(movieId);
   }, [movieId]);
-  return (
+
+  
+   
+      return (
     <>
       <ul>
         {rev.map(({ id, author, content }) => (
@@ -30,6 +34,7 @@ const Reviews = () => {
       </ul>
     </>
   );
-};
+  
+} 
 
 export default Reviews;
