@@ -26,6 +26,7 @@ const MovieDetailsCard = () => {
   }, [movieId]);
 
   const { poster_path, title, popularity, overview, genres } = movieDetails;
+  if(popularity !== undefined || genres !==undefined) {
   return (
     <div className={css.container}>
       <Link className={css.button} to={backLink.current}>
@@ -48,9 +49,9 @@ const MovieDetailsCard = () => {
           <ul className={css.list}>
             {genres.map(({ id, name }) => (
               <li key={id} className={css.item}>
-                {name}
+                {name} 
               </li>
-            ))} 
+            ))}  
           </ul>
         </div>
       </section>
@@ -74,6 +75,7 @@ const MovieDetailsCard = () => {
       </section>
     </div>
   );
+            }
 };
 
 export default MovieDetailsCard;
