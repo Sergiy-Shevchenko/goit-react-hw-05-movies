@@ -27,7 +27,7 @@ const Search = () => {
     if (searchMovieName) fetchSearchMovies(searchMovieName);
   }, [searchMovieName]);
 
-  console.log(moviesSearch.length);
+  // console.log(moviesSearch.length)
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -45,6 +45,7 @@ const Search = () => {
     }
   };
 
+  // if (moviesSearch.length === 0)
   return (
     <>
       <form className={css.input} onSubmit={handleSubmit}>
@@ -60,11 +61,9 @@ const Search = () => {
         />
         <button type="submit">Search</button>
       </form>
-      <div className={css.movie__list}>
-      {moviesSearch.length === 0 ? (
-        <p>Such no movie found!</p>
-      ) : (
-        moviesSearch.map(({ id, title }) => {
+
+      <ul className={css.list}>
+        {moviesSearch.map(({ id, title }) => {
           return (
             <li key={id} className={css.item}>
               <Link
@@ -76,8 +75,8 @@ const Search = () => {
               </Link>
             </li>
           );
-        })
-      )}</div>
+        })}
+      </ul>
     </>
   );
 };
