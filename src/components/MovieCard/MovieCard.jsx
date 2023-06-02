@@ -40,7 +40,7 @@ const MovieDetailsCard = () => {
         <div className={css.description}>
           <h1>{title}</h1>
           <p>User Srtore: {popularity
-          // .toFixed(1)
+          .toFixed()
           }</p>
           <h3>Overview</h3>
           <p>{overview}</p>
@@ -50,7 +50,7 @@ const MovieDetailsCard = () => {
               <li key={id} className={css.item}>
                 {name}
               </li>
-            ))}
+            ))} 
           </ul>
         </div>
       </section>
