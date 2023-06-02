@@ -11,7 +11,7 @@ const Cast = () => {
       try {
         const cast = await fetchCredits(id);
         setCastMovies(cast.data.cast);
-        console.log(cast.data.cast);
+        // console.log(cast.data.cast);
       } catch (error) {
         console.log('Error');
       }
@@ -21,6 +21,7 @@ const Cast = () => {
 
 
   return (
+    
     <ul>
       {castMovies.map(({ id, profile_path, name, character }) => (
         <li key={id}>
@@ -28,7 +29,7 @@ const Cast = () => {
             src={`https://image.tmdb.org/t/p/w500${profile_path}`}
             alt={name}
             width={180}
-            height={250}
+         
           />
           <h3>{name}</h3>
           <p>Character: {character}</p>

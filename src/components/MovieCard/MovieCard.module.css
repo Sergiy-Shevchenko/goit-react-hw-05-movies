@@ -1,6 +1,6 @@
 .container {
   padding-left: 24px;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 .button {
   font-size: 16px;
@@ -22,7 +22,7 @@
 
 .section__poster {
   display: flex;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .description {
@@ -39,14 +39,12 @@ ul.list li {
   margin-right: 10px;
 }
 
-.list__list {
+.list {
   padding-inline-start: 0;
   text-decoration: none;
 }
 
-.section__link {
-  /* border:solid 1px; */
-}
+
 
 .link {
   text-decoration: none;

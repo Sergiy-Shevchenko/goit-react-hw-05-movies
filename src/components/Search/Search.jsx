@@ -19,7 +19,7 @@ const Search = () => {
         const search = await fetchSearch(text);
 
         setMoviesSearch(search.data.results);
-        console.log(search.data.results);
+        // console.log(search.data.results);
       } catch (error) {
         console.log('Error');
       }
@@ -27,10 +27,12 @@ const Search = () => {
     if (searchMovieName) fetchSearchMovies(searchMovieName);
   }, [searchMovieName]);
 
+  console.log(moviesSearch.length);
+
   const handleSubmit = event => {
     event.preventDefault();
     const { value } = event.target.search;
-    console.log(value);
+    // console.log(value);
     setSearchMovieName(value);
   };
 
@@ -53,13 +55,16 @@ const Search = () => {
           onChange={updateQueryString}
           autoComplete="off"
           autoFocus
+          required
           placeholder="Search movie"
         />
         <button type="submit">Search</button>
       </form>
-
-      <ul className={css.list}>
-        {moviesSearch.map(({ id, title }) => {
+      <div className={css.movie__list}>
+      {moviesSearch.length === 0 ? (
+        <p>Such no movie found!</p>
+      ) : (
+        moviesSearch.map(({ id, title }) => {
           return (
             <li key={id} className={css.item}>
               <Link
@@ -71,8 +76,8 @@ const Search = () => {
               </Link>
             </li>
           );
-        })}
-      </ul>
+        })
+      )}</div>
     </>
   );
 };

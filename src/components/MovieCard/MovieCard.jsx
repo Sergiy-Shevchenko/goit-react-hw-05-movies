@@ -17,7 +17,7 @@ const MovieDetailsCard = () => {
       try {
         const details = await fetchDetails(id);
         setMovieDetails(details.data);
-        console.log(details.data);
+        // console.log(details.data);
       } catch (error) {
         console.log('Error');
       }

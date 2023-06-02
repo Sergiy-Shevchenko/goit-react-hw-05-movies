@@ -13,3 +13,8 @@
 .item :hover {
   color: rgb(1, 25, 53);
 }
+
+.movie__list {
+  padding-top: 20px;
+  padding-left: 24px;
+}
