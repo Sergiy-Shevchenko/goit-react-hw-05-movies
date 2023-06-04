@@ -24,10 +24,11 @@ const MovieDetailsCard = () => {
     };
     fetchMovieDetails(movieId);
   }, [movieId]);
-
+  
   const { poster_path, title, popularity, overview, genres } = movieDetails;
+  
   if(popularity !== undefined || genres !==undefined) {
-  return (
+return (
     <div className={css.container}>
       <Link className={css.button} to={backLink.current}>
         Go back
