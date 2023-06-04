@@ -29,6 +29,7 @@ const MovieDetailsCard = () => {
   
   if(popularity !== undefined || genres !==undefined) {
 return (
+  
     <div className={css.container}>
       <Link className={css.button} to={backLink.current}>
         Go back

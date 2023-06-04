@@ -2,6 +2,7 @@ import { fetchCredits } from 'api/api';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
+
 const Cast = () => {
   const { movieId } = useParams();
   const [castMovies, setCastMovies] = useState([]);
@@ -19,9 +20,12 @@ const Cast = () => {
     fetchCast(movieId);
   }, [movieId]);
 
+  
+
   return (
     <>
-      {castMovies.length !== 0 ? (
+
+      {castMovies.length === 0 ? (
         <p>We don't have actors for this movie.</p>
       ) : (
         <ul>
@@ -37,7 +41,7 @@ const Cast = () => {
             </li>
           ))}
         </ul>
-      )}
+      )} 
     </>
   );
 };
