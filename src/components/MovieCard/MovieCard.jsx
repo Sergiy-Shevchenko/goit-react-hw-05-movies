@@ -24,12 +24,10 @@ const MovieDetailsCard = () => {
     };
     fetchMovieDetails(movieId);
   }, [movieId]);
-  
+
   const { poster_path, title, popularity, overview, genres } = movieDetails;
-  
-  if(popularity !== undefined || genres !==undefined) {
-return (
-  
+
+  return (
     <div className={css.container}>
       <Link className={css.button} to={backLink.current}>
         Go back
@@ -42,18 +40,20 @@ return (
         />
         <div className={css.description}>
           <h1>{title}</h1>
-          <p>User Srtore: {popularity
-          .toFixed()
-          }</p>
+          <p>
+            User Srtore:{' '}
+            {popularity ? (popularity.toFixed()) : 'No popularity'}
+          </p>
           <h3>Overview</h3>
           <p>{overview}</p>
           <h3>Genres</h3>
           <ul className={css.list}>
-            {genres.map(({ id, name }) => (
-              <li key={id} className={css.item}>
-                {name} 
-              </li>
-            ))}  
+            {genres && (
+              genres.map(({ id, name }) => (
+                <li key={id} className={css.item}>
+                  {name}
+                </li>
+              )))}
           </ul>
         </div>
       </section>
@@ -77,7 +77,6 @@ return (
       </section>
     </div>
   );
-            }
 };
 
 export default MovieDetailsCard;
